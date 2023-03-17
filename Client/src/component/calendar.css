@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width: 80vw;
+    margin: auto;
+    background-color: #e5e5f7;
+    
+}
+.container{
+    
+  width: auto;
+  height: auto;
+    height: 100%;
+  width: 100%;
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444df73f 0.75px, #e5e5f7 0.75px);
+    background-size: 15px 15px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    
+}
+.calendar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   
+    /* margin-top: 10vh ; */
+    
+    
+
+}
+.cal-day{
+    display: inline-block;
+    width: calc(60vw/7);
+    text-align: center;
+  
+    /* padding: 5vh 0; */
+    margin: 0 2px;
+    /* background-color: #1200ff; */
+
+}
+.cal-day:hover{
+    background-color: aquamarine;
+}
+.week-days{
+    display: inline-block;
+    width: calc(60vw/7);
+    text-align: center;
+    margin: 5vh 2px;
+    color: #1200ff;
+    font-size: 2em;
+}
+.week{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5vh;
+    justify-content: center;
+
+}
+.cal-header{
+   display: flex;
+    padding-top: 10vh;
+    justify-content: space-evenly;
+    color: #1200ff;
+}
+.next{
+    float: right;
+    padding: 3vh;
+    
+}
+.next:hover{
+    cursor: pointer;
+}
+.prev{
+    float: left;
+    padding: 3vh;
+    cursor: pointer;
+}
+.date{
+    display: inline;
+}
+.selected{
+    color: red;
+}
+.today{
+    background-color: #1200ff;
+    color: #e5e5f7;
+    box-shadow: inset 0px 0px 5px 0px black;
+   
+    /* border: 1vh solid black; */
+}
+.cal-day > div{
+    padding: 5vh 0;
+
+}
+.before{
+    color: rgba(101, 101, 101, 0.45);
+}
