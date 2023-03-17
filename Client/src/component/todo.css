@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+.event-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 1vh 0;
+    font-family: 'Comfortaa', cursive;
+    background-color: #bde9da;
+}
+.strike{
+    text-decoration: line-through;
+}

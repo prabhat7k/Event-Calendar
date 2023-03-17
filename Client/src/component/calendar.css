@@ -2,31 +2,55 @@
     margin: 0;
     padding: 0;
 }
-body{
+/* body{
     max-width: 80vw;
     margin: auto;
     background-color: #e5e5f7;
     
-}
+} */
+
 .container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.events{
+    margin: auto;
+}
+.logout{
+    position: fixed;
+    right: 2vw;
+}
+.logout > button{
+    margin: 2vh 2vh 0 0;
+    padding: 2vh;
+    border-radius: 10%;
+}
+.logout > button:hover{
+   background-color: rgba(69, 78, 247, 0.247);
+   color: rgb(127, 53, 246);
+}
+
+.complete-calendar{
+   
+    height: auto;
+  width: 60%;
     
-  width: auto;
-  height: auto;
-    height: 100%;
-  width: 100%;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+    margin-top: 2vh;
+
     background-color: #e5e5f7;
-    background-image: radial-gradient(#444df73f 0.75px, #e5e5f7 0.75px);
-    background-size: 15px 15px;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+opacity: 1;
+background-image: radial-gradient(#444df759 0.5px, #e5e5f7 0.5px);
+background-size: 10px 10px;
     
 }
 .calendar{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    color: #107977;
    
     /* margin-top: 10vh ; */
     
@@ -35,7 +59,7 @@ body{
 }
 .cal-day{
     display: inline-block;
-    width: calc(60vw/7);
+    width: calc(50vw/7);
     text-align: center;
   
     /* padding: 5vh 0; */
@@ -48,25 +72,25 @@ body{
 }
 .week-days{
     display: inline-block;
-    width: calc(60vw/7);
+    width: calc(50vw/7);
     text-align: center;
-    margin: 5vh 2px;
-    color: #1200ff;
-    font-size: 2em;
+    margin: 2.5vh 2px;
+    color: #ce4d4d;
+    font-size: larger;
 }
 .week{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 5vh;
+    margin-top: 2.5vh;
     justify-content: center;
 
 }
 .cal-header{
    display: flex;
-    padding-top: 10vh;
+    padding-top: 5vh;
     justify-content: space-evenly;
-    color: #1200ff;
+    color: #6b689b;
 }
 .next{
     float: right;

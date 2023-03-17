@@ -3,6 +3,7 @@ import moment, { weekdays } from "moment";
 import createCal from "./Create";
 import "./calendar.css";
 import { FcNext, FcPrevious } from "react-icons/fc";
+import Event from "./Event";
 
 function Calendar() {
 	const [cal, setCal] = useState([]);
@@ -10,7 +11,6 @@ function Calendar() {
 
 	useEffect(() => {
 		setCal(createCal(date));
-		console.log(date.month());
 	}, [date]);
 
 	function handleNext() {
@@ -52,38 +52,53 @@ function Calendar() {
 	const weekdays = moment.weekdaysShort();
 	return (
 		<div className="container">
-			<h1 className="cal-header">
-				<button className="prev" onClick={() => setDate(handlePrev())}>
-					{<FcPrevious />}
-				</button>
-				<div className="date">{date.format("MMMM, YYYY")}</div>
-				<button className=" next" onClick={() => setDate(handleNext())}>
-					{<FcNext />}
-				</button>
-			</h1>
+			<div className="complete-calendar">
+				<h1 className="cal-header">
+					<button
+						className="prev"
+						onClick={() => setDate(handlePrev())}
+					>
+						{<FcPrevious />}
+					</button>
+					<div className="date">{date.format("MMMM, YYYY")}</div>
+					<button
+						className=" next"
+						onClick={() => setDate(handleNext())}
+					>
+						{<FcNext />}
+					</button>
+				</h1>
 
-			<div className="week">
-				{weekdays.map((wday) => (
-					<div className="week-days">{wday}</div>
-				))}
-			</div>
-			<div className="calendar ">
-				{cal.map((week) => (
-					<div>
-						{week.map((day) => (
-							<div
-								className="cal-day"
-								onClick={() => {
-									setDate(day);
-								}}
-							>
-								<div className={customStyle(day)}>
-									{day.format("DD")}
+				<div className="week">
+					{weekdays.map((wday) => (
+						<div className="week-days">{wday}</div>
+					))}
+				</div>
+				<div className="calendar ">
+					{cal.map((week) => (
+						<div>
+							{week.map((day) => (
+								<div
+									className="cal-day"
+									onClick={() => {
+										setDate(day);
+									}}
+								>
+									<div className={customStyle(day)}>
+										{day.format("DD")}
+									</div>
 								</div>
-							</div>
-						))}
-					</div>
-				))}
+							))}
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div className="events">
+				<Event />
+			</div>
+			<div className="logout">
+				<button>Log Out</button>
 			</div>
 		</div>
 	);
