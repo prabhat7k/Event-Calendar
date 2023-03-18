@@ -1,0 +1,25 @@
+.login-form{
+    justify-content: center;
+}
+
+.cen{
+    width: 33.33333333%;
+    margin: auto;
+    
+}
+.cen>button{
+   
+   text-align: center;
+}
+
+.sign{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 10vw 0 0 ;
+    
+}
+
+.link{
+    margin-left: 2vw;
+    text-decoration: none;
+}

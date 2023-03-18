@@ -102,7 +102,14 @@ function Calendar() {
 				<Event />
 			</div>
 			<div className="logout">
-				<button onClick={() => signOut(auth)}>Log Out</button>
+				<button
+					onClick={() => {
+						document.title = "Login Page | Event Calendar";
+						signOut(auth);
+					}}
+				>
+					Log Out
+				</button>
 			</div>
 		</div>
 	);
