@@ -4,6 +4,9 @@ import createCal from "./Create";
 import "./calendar.css";
 import { FcNext, FcPrevious } from "react-icons/fc";
 import Event from "./Event";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
+import { uid } from "uid";
 
 function Calendar() {
 	const [cal, setCal] = useState([]);
@@ -11,6 +14,7 @@ function Calendar() {
 
 	useEffect(() => {
 		setCal(createCal(date));
+		console.log(uid());
 	}, [date]);
 
 	function handleNext() {
@@ -98,7 +102,7 @@ function Calendar() {
 				<Event />
 			</div>
 			<div className="logout">
-				<button>Log Out</button>
+				<button onClick={() => signOut(auth)}>Log Out</button>
 			</div>
 		</div>
 	);

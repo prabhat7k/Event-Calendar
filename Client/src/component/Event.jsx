@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GrAddCircle } from "react-icons/gr";
 import Todo from "./Todo";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import {
 	query,
 	collection,
@@ -12,6 +12,7 @@ import {
 	deleteDoc,
 	getDoc,
 } from "firebase/firestore";
+import { set, ref } from "firebase/database";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import DatePicker from "react-datepicker";
 
@@ -33,10 +34,11 @@ function Event() {
 			return;
 		}
 		const finalDate = moment(date).format("DD/MM/YYYY");
-		await addDoc(collection(db, "todos"), {
+		await addDoc(collection(db, `todos`), {
 			text: input,
 			completed: false,
 			time: finalDate,
+			uid: auth.currentUser.uid,
 		});
 		setInput("");
 	};
@@ -47,8 +49,12 @@ function Event() {
 		const docSnap = onSnapshot(q, (querySnapshot) => {
 			let todosArr = [];
 			querySnapshot.forEach((doc) => {
-				todosArr.push({ ...doc.data(), id: doc.id });
+				if (doc.data().uid === auth.currentUser.uid) {
+					// console.log(doc.data().uid);
+					todosArr.push({ ...doc.data(), id: doc.id });
+				}
 			});
+
 			setTodos(todosArr);
 		});
 		return () => docSnap();
