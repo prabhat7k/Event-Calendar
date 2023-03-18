@@ -7,14 +7,14 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const app = firebase.initializeApp({
-	apiKey: "AIzaSyCpd7htrGRhA6hRMSF5sYC_KXlm6q4hJ3E",
-	authDomain: "event-cal-f61d9.firebaseapp.com",
-	databaseURL: "https://event-cal-f61d9-default-rtdb.firebaseio.com",
-	projectId: "event-cal-f61d9",
-	storageBucket: "event-cal-f61d9.appspot.com",
-	messagingSenderId: "495375156383",
-	appId: "1:495375156383:web:e4b7f6db200a3b2e1e8eaa",
-	measurementId: "G-38JKXPNVJB",
+	apiKey: process.env.React_App_apiKey,
+	authDomain: process.env.React_App_authDomain,
+	databaseURL: process.env.React_App_databaseURL,
+	projectId: process.env.React_App_projectId,
+	storageBucket: process.env.React_App_storageBucket,
+	messagingSenderId: process.env.React_App_messagingSenderId,
+	appId: process.env.React_App_appId,
+	measurementId: process.env.React_App_measurementId,
 });
 
 export default app;
